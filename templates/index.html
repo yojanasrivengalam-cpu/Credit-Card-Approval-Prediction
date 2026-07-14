@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Approval</title>
+    <style>
+        body { font-family: Arial; background: #f0f2f5; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
+        h1 { color: #1a73e8; text-align: center; }
+        .form-group { margin: 15px 0; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        button { width: 100%; padding: 15px; background: #1a73e8; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #1557b0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Credit Card Approval Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label>Gender (1=Male, 0=Female)</label>
+                <select name="gender"><option value="1">Male</option><option value="0">Female</option></select>
+            </div>
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" name="age" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Debt</label>
+                <input type="number" name="debt" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Married (1=Yes, 0=No)</label>
+                <select name="married"><option value="1">Yes</option><option value="0">No</option></select>
+            </div>
+            <div class="form-group">
+                <label>Bank Customer (1=Yes, 0=No)</label>
+                <select name="bank_customer"><option value="1">Yes</option><option value="0">No</option></select>
+            </div>
+            <div class="form-group">
+                <label>Industry</label>
+                <select name="industry">
+                    <option>CommunicationServices</option>
+                    <option>ConsumerDiscretionary</option>
+                    <option>ConsumerStaples</option>
+                    <option>Education</option>
+                    <option>Energy</option>
+                    <option>Financials</option>
+                    <option>Healthcare</option>
+                    <option>Industrials</option>
+                    <option>InformationTechnology</option>
+                    <option>Materials</option>
+                    <option>Real Estate</option>
+                    <option>Research</option>
+                    <option>Transport</option>
+                    <option>Utilities</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Ethnicity</label>
+                <select name="ethnicity">
+                    <option>Asian</option>
+                    <option>Black</option>
+                    <option>Latino</option>
+                    <option>Other</option>
+                    <option>White</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Years Employed</label>
+                <input type="number" name="years_employed" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Prior Default (1=Yes, 0=No)</label>
+                <select name="prior_default"><option value="0">No</option><option value="1">Yes</option></select>
+            </div>
+            <div class="form-group">
+                <label>Employed (1=Yes, 0=No)</label>
+                <select name="employed"><option value="1">Yes</option><option value="0">No</option></select>
+            </div>
+            <div class="form-group">
+                <label>Credit Score</label>
+                <input type="number" name="credit_score" required>
+            </div>
+            <div class="form-group">
+                <label>Drivers License (1=Yes, 0=No)</label>
+                <select name="drivers_license"><option value="1">Yes</option><option value="0">No</option></select>
+            </div>
+            <div class="form-group">
+                <label>Citizen</label>
+                <select name="citizen">
+                    <option>ByBirth</option>
+                    <option>ByOtherMeans</option>
+                    <option>Temporary</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Zip Code</label>
+                <input type="number" name="zipcode" required>
+            </div>
+            <div class="form-group">
+                <label>Income</label>
+                <input type="number" name="income" required>
+            </div>
+            <button type="submit">Predict Approval</button>
+        </form>
+    </div>
+</body>
+</html>
